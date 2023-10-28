@@ -60,7 +60,7 @@
 
     <Product
         Id='*'
-        Name='github_release'
+        Name='github_releases'
         UpgradeCode='3819D7EE-15C2-4C9A-9C63-32E8FE78EB0C'
         Manufacturer='oneElectron &lt;one.electron109@protonmail.com'
         Language='1033'
@@ -122,9 +122,9 @@
                         <Component Id='binary0' Guid='*'>
                             <File
                                 Id='exe0'
-                                Name='github_release.exe'
+                                Name='learning_github_release.exe'
                                 DiskId='1'
-                                Source='$(var.CargoTargetBinDir)\github_release.exe'
+                                Source='$(var.CargoTargetBinDir)\learning_github_release.exe'
                                 KeyPath='yes'/>
                         </Component>
                     </Directory>
