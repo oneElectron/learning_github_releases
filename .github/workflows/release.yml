@@ -186,7 +186,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: "oneElectron/oneElectron"
+          repository: "oneElectron/homebrew-oneElectron"
           token: ${{ secrets.HOMEBREW_TAP_TOKEN }}
       # So we have access to the formula
       - name: Fetch local artifacts
