@@ -2,7 +2,35 @@
 name = "github_release"
 version = "0.1.0"
 edition = "2021"
+authors = ["oneElectron <one.electron109@protonmail.com"]
+repository = "https://github.com/oneElectron/learning_github_releases"
+
+[package.metadata.wix]
+upgrade-guid = "3819D7EE-15C2-4C9A-9C63-32E8FE78EB0C"
+path-guid = "0598FB83-9284-4C8A-8EC3-2E51F0D77E59"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+# The profile that 'cargo dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
+
+# Config for 'cargo dist'
+[workspace.metadata.dist]
+# The preferred cargo-dist version to use in CI (Cargo.toml SemVer syntax)
+cargo-dist-version = "0.4.0"
+# CI backends to support
+ci = ["github"]
+# The installers to generate for each app
+installers = ["shell", "powershell", "homebrew", "msi"]
+# A GitHub repo to push Homebrew formulas to
+tap = "oneElectron/oneElectron"
+# Target platforms to build apps for (Rust target-triple syntax)
+targets = ["x86_64-unknown-linux-gnu", "aarch64-apple-darwin", "x86_64-apple-darwin", "x86_64-unknown-linux-musl", "x86_64-pc-windows-msvc"]
+# Publish jobs to run in CI
+publish-jobs = ["homebrew"]
+# Publish jobs to run in CI
+pr-run-mode = "plan"
